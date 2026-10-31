@@ -1,0 +1,24 @@
+seed: 23
+device: cpu
+dataset:
+  name: synthetic_domains
+  num_domains: 3
+  samples_per_domain: 240
+  input_dim: 2
+  num_classes: 3
+  batch_size: 48
+model:
+  name: adaptive_router_kan
+  num_domains: 3
+  hidden_dims: [24, 24]
+  basis: bspline
+  n_basis: 7
+optimizer:
+  lr: 0.0015
+  weight_decay: 0.0001
+training:
+  epochs: 3
+continual:
+  ewc_strength: 0.0
+  replay_capacity: 96
+  replay_batch_size: 16

@@ -1,0 +1,25 @@
+seed: 43
+device: cpu
+dataset:
+  type: synthetic
+  num_domains: 3
+  samples_per_domain: 180
+  input_dim: 2
+  num_classes: 3
+  batch_size: 32
+model:
+  name: kan
+  hidden_dims: [24, 24]
+  basis: rbf
+  n_basis: 7
+optimizer:
+  name: adam
+  lr: 0.001
+training:
+  epochs: 2
+continual:
+  strategy:
+    name: mas
+    strength: 0.2
+  replay_capacity: 64
+  replay_batch_size: 12

@@ -1,0 +1,32 @@
+# Replace root with the extracted Office-Home dataset directory.
+# Expected folder layout: root/{Art,Clipart,Product,Real World}/{class}/{image}.
+seed: 19
+device: cuda
+dataset:
+  type: image_folder
+  root: ./data/office_home
+  domains: [Art, Clipart, Product, Real World]
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+model:
+  name: vision_hybrid_moe_kan
+  feature_dim: 128
+  hidden_dims: [64]
+  expert_bases: [bspline, rbf, chebyshev, wavelet]
+  n_basis: 8
+  top_k: 2
+optimizer:
+  name: adamw
+  lr: 0.0005
+  weight_decay: 0.0001
+training:
+  epochs: 10
+continual:
+  strategy:
+    name: ewc
+    strength: 0.1
+    decay: 1.0
+    parameter_filter: coefficients
+  replay_capacity: 200
+  replay_batch_size: 16

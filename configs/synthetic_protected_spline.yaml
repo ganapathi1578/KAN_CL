@@ -1,0 +1,26 @@
+seed: 17
+device: cpu
+dataset:
+  name: synthetic_domains
+  num_domains: 3
+  samples_per_domain: 240
+  input_dim: 2
+  num_classes: 3
+  batch_size: 48
+  noise: 0.32
+model:
+  name: protected_spline_kan
+  hidden_dims: [32, 32]
+  basis: bspline
+  n_basis: 8
+  degree: 3
+optimizer:
+  name: adamw
+  lr: 0.002
+  weight_decay: 0.0001
+training:
+  epochs: 3
+continual:
+  ewc_strength: 0.05
+  replay_capacity: 64
+  replay_batch_size: 16

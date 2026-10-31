@@ -1,0 +1,130 @@
+{
+  "mlp": {
+    "parameter_count": 1379,
+    "average_accuracy": 0.5902777777777778,
+    "average_accuracy_by_stage": [
+      1.0,
+      0.8541666666666667,
+      0.5902777777777778
+    ],
+    "mean_forgetting": 0.13541666666666669,
+    "forgetting_by_domain": [
+      0.27083333333333337,
+      0.0
+    ],
+    "backward_transfer": -0.03125,
+    "first_domain_retention": 0.7291666666666666
+  },
+  "vanilla_kan": {
+    "parameter_count": 5715,
+    "average_accuracy": 0.6388888888888888,
+    "average_accuracy_by_stage": [
+      0.5833333333333334,
+      0.6875,
+      0.6388888888888888
+    ],
+    "mean_forgetting": 0.20833333333333337,
+    "forgetting_by_domain": [
+      0.41666666666666674,
+      0.0
+    ],
+    "backward_transfer": -0.17708333333333337,
+    "first_domain_retention": 0.16666666666666666
+  },
+  "fastkan": {
+    "parameter_count": 5757,
+    "average_accuracy": 0.6180555555555556,
+    "average_accuracy_by_stage": [
+      1.0,
+      0.9166666666666667,
+      0.6180555555555556
+    ],
+    "mean_forgetting": 0.45833333333333337,
+    "forgetting_by_domain": [
+      0.8333333333333334,
+      0.08333333333333337
+    ],
+    "backward_transfer": -0.45833333333333337,
+    "first_domain_retention": 0.16666666666666666
+  },
+  "kac": {
+    "parameter_count": 5757,
+    "average_accuracy": 0.6180555555555556,
+    "average_accuracy_by_stage": [
+      1.0,
+      0.9166666666666667,
+      0.6180555555555556
+    ],
+    "mean_forgetting": 0.45833333333333337,
+    "forgetting_by_domain": [
+      0.8333333333333334,
+      0.08333333333333337
+    ],
+    "backward_transfer": -0.45833333333333337,
+    "first_domain_retention": 0.16666666666666666
+  },
+  "protected_spline": {
+    "parameter_count": 5715,
+    "average_accuracy": 0.638888888888889,
+    "average_accuracy_by_stage": [
+      0.5833333333333334,
+      0.6979166666666666,
+      0.638888888888889
+    ],
+    "mean_forgetting": 0.20833333333333337,
+    "forgetting_by_domain": [
+      0.41666666666666674,
+      0.0
+    ],
+    "backward_transfer": -0.16666666666666669,
+    "first_domain_retention": 0.16666666666666666
+  },
+  "adaptive_router": {
+    "parameter_count": 8748,
+    "average_accuracy": 0.5555555555555555,
+    "average_accuracy_by_stage": [
+      0.875,
+      0.6979166666666666,
+      0.5555555555555555
+    ],
+    "mean_forgetting": 0.1875,
+    "forgetting_by_domain": [
+      0.375,
+      0.0
+    ],
+    "backward_transfer": 0.13541666666666663,
+    "first_domain_retention": 0.625
+  },
+  "hybrid_moe": {
+    "parameter_count": 8790,
+    "average_accuracy": 0.5555555555555555,
+    "average_accuracy_by_stage": [
+      0.9583333333333334,
+      0.875,
+      0.5555555555555555
+    ],
+    "mean_forgetting": 0.5520833333333334,
+    "forgetting_by_domain": [
+      0.9166666666666667,
+      0.1875
+    ],
+    "backward_transfer": -0.5520833333333334,
+    "first_domain_retention": 0.041666666666666664
+  },
+  "progressive": {
+    "parameter_count": 21714,
+    "average_accuracy": 0.7569444444444445,
+    "average_accuracy_by_stage": [
+      0.6875,
+      0.6666666666666667,
+      0.7569444444444445
+    ],
+    "mean_forgetting": 0.0,
+    "forgetting_by_domain": [
+      0.0,
+      0.0
+    ],
+    "backward_transfer": 0.0,
+    "first_domain_retention": 0.6875
+  }
+}

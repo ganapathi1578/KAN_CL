@@ -1,0 +1,29 @@
+# Expected layout: data/vlcs/{Caltech,LabelMe,SUN,VOC}/{class_name}/{image}.
+seed: 31
+device: cuda
+dataset:
+  type: image_folder
+  root: ./data/vlcs
+  domains: [Caltech, LabelMe, SUN, VOC]
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+model:
+  name: vision_protected_spline_kan
+  feature_dim: 128
+  hidden_dims: [64]
+  n_basis: 8
+optimizer:
+  name: adamw
+  lr: 0.0005
+  weight_decay: 0.0001
+training:
+  epochs: 10
+continual:
+  strategy:
+    name: ewc
+    strength: 0.1
+    decay: 1.0
+    parameter_filter: coefficients
+  replay_capacity: 200
+  replay_batch_size: 16

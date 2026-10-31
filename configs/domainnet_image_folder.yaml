@@ -1,0 +1,25 @@
+# Expected layout: data/domainnet/{clipart,infograph,painting,quickdraw,real,sketch}/{class}/{image}.
+seed: 37
+device: cuda
+dataset:
+  type: image_folder
+  root: ./data/domainnet
+  domains: [clipart, infograph, painting, quickdraw, real, sketch]
+  image_size: 224
+  batch_size: 48
+  num_workers: 8
+model:
+  name: vision_adaptive_router_kan
+  feature_dim: 128
+  num_domains: 6
+  hidden_dims: [64, 32]
+  n_basis: 8
+optimizer:
+  lr: 0.0005
+  weight_decay: 0.0001
+training:
+  epochs: 8
+continual:
+  ewc_strength: 0.0
+  replay_capacity: 500
+  replay_batch_size: 24

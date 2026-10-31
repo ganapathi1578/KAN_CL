@@ -1,0 +1,4 @@
+include README.md LICENSE requirements.txt
+recursive-include configs *.yaml
+recursive-include tests *.py
+recursive-include examples *.py

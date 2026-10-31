@@ -1,0 +1,23 @@
+seed: 29
+device: cpu
+dataset:
+  name: synthetic_domains
+  num_domains: 3
+  samples_per_domain: 240
+  input_dim: 2
+  num_classes: 3
+  batch_size: 48
+model:
+  name: hybrid_moe_kan
+  hidden_dims: [24, 24]
+  expert_bases: [bspline, rbf, chebyshev, wavelet]
+  n_basis: 7
+  top_k: 2
+optimizer:
+  lr: 0.0015
+training:
+  epochs: 3
+continual:
+  ewc_strength: 0.0
+  replay_capacity: 64
+  replay_batch_size: 16

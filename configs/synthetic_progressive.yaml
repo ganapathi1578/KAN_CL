@@ -1,0 +1,22 @@
+seed: 47
+device: cpu
+dataset:
+  type: synthetic
+  num_domains: 3
+  samples_per_domain: 180
+  input_dim: 2
+  num_classes: 3
+  batch_size: 32
+model:
+  name: progressive_kan
+  num_tasks: 1
+  hidden_dims: [24, 24]
+  basis: bspline
+  n_basis: 7
+optimizer:
+  name: adamw
+  lr: 0.001
+training:
+  epochs: 2
+continual:
+  replay_capacity: 0

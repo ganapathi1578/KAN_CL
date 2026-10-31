@@ -1,0 +1,25 @@
+# Expected layout: data/pacs/{art_painting,cartoon,photo,sketch}/{class_name}/{image}.
+seed: 17
+device: cuda
+dataset:
+  type: image_folder
+  root: ./data/pacs
+  domains: [art_painting, cartoon, photo, sketch]
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+model:
+  name: vision_protected_spline_kan
+  feature_dim: 128
+  hidden_dims: [64]
+  n_basis: 8
+  freeze_backbone: false
+optimizer:
+  lr: 0.0005
+  weight_decay: 0.0001
+training:
+  epochs: 10
+continual:
+  ewc_strength: 0.1
+  replay_capacity: 200
+  replay_batch_size: 16
